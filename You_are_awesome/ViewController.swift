@@ -9,6 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
+    var index = 0
     
     @IBOutlet weak var messageLabel: UILabel!
     
@@ -17,19 +18,24 @@ class ViewController: UIViewController {
         super.viewDidLoad()
     }
     @IBAction func showMessagePressed(_ sender: UIButton) {
-        let message1 = "You are Awesome!"
-        let message2 = "You are Great!"
-        let message3 = "You are Amazing!"
+        let message1 = ["You are Awesome!","You are Great!","You are Amazing!","Keep at it","Just do it!", "Dont stop!", "Believe it","I can't wait to download your app!"]
+        messageLabel.text = message1[index]
         
-        if messageLabel.text == message1{
-            messageLabel.text = message2
-            
-        } else if messageLabel.text == message2{
-            
-            messageLabel.text = message3
+        if index == message1.count-1{
+            index = 0
         }else{
-            messageLabel.text = message1
+            index += 1
         }
+        
+//        if messageLabel.text == message1{
+//            messageLabel.text = message2
+//
+//        } else if messageLabel.text == message2{
+//
+//            messageLabel.text = message3
+//        }else{
+//            messageLabel.text = message1
+//        }
     }
 }
 
