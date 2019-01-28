@@ -20,7 +20,16 @@ class ViewController: UIViewController {
     @IBAction func showMessagePressed(_ sender: UIButton) {
         let message1 = ["You are Awesome!","You are Great!","You are Amazing!","Keep at it","Just do it!", "Dont stop!", "Believe it","I can't wait to download your app!"]
         
-        messageLabel.text = message1.randomElement()!
+        var newIndex = -1
+        
+        repeat{
+            newIndex = Int.random(in: 0..<message1.count)
+            
+        }while index == newIndex
+        
+        index = newIndex
+        messageLabel.text = message1[index]
+//        messageLabel.text = message1.randomElement()!
 //        messageLabel.text = message1[index]
 //
 //        if index == message1.count-1{
